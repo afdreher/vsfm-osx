@@ -28,8 +28,8 @@ function make_cmvs () {
 	if [ ! -e "${CMVS_GZIP}" ]; then
 		echo "Downloading Clustering Views for Multi-view Stereo (CMVS)"
 		curl -L $CMVS_SRC > $CMVS_GZIP
-		tar zxvf $CMVS_GZIP
 	fi
+	tar zxvf $CMVS_GZIP
 	
 	if [ ! -e "Graclus" ]; then
 		echo "Fetching Graclus 1.2"
