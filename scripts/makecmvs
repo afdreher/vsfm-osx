@@ -40,8 +40,12 @@ function make_cmvs () {
 	# downloading additional lapack files
 	mkdir -p cmvs/include/clapack
 	cd cmvs/include/clapack
-	curl -L http://www.netlib.org/clapack/clapack.h > clapack.h
-	curl -L http://www.netlib.org/clapack/f2c.h > f2c.h
+	if [ ! -e "clapack" ]; then
+		curl -L http://www.netlib.org/clapack/clapack.h > clapack.h
+	fi
+	if [ ! -e "f2c" ]; then
+		curl -L http://www.netlib.org/clapack/f2c.h > f2c.h
+	fi
 	cd ../../../
 
 	echo $PATH | grep -q Contents/Resources/bin || export PATH="$APP_RES/bin:$APP_RES/sbin:$PATH"
