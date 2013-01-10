@@ -1,7 +1,7 @@
 #!/bin/bash
 # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 #
-# Copyright (C) 2012 Ivan Rodriguez Murillo <wantez@gmail.com>. All rights reserved.
+# Copyright (C) 2012 Andrew F. Dreher <afdreher@gmail.com>. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0
 # (the "License"); you may not use this file except in compliance with
@@ -21,12 +21,15 @@ scriptPath=${0%/*}
 
 source $scriptPath/common
 
-source $scriptPath/makebrew
+APP_BIN=$APP_RES/bin
 
-source $scriptPath/makevsfm
-source $scriptPath/makesiftgpu
-source $scriptPath/makepba
-source $scriptPath/makecmvs
+if [ -e $APP_BIN ]; then
+  cd $APP_BIN
 
-source $scriptPath/makeapp
-source $scriptPath/fixapplinks
+  brew link gettext
+  brew link libffi
+else
+  echo "Incomplete build"
+fi
+
+cd - > /dev/null
