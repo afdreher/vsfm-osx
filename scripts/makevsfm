@@ -39,7 +39,7 @@ function make_sfm () {
 	sed -e "s/${KEYWORD}/${REPLACE}/g" vsfm/makefile  > output.file;mv output.file vsfm/makefile
 	
 	KEYWORD=$(echo -L/usr/x11/lib | sed -e 's/\//\\\//g')
-	REPLACE=$(echo -L/opt/X11/lib | sed -e 's/\//\\\//g')
+	REPLACE=$(echo -L/$X11_LOC/X11/lib | sed -e 's/\//\\\//g')
 	sed -e "s/${KEYWORD}/${REPLACE}/g" vsfm/makefile  > output.file;mv output.file vsfm/makefile
 	
 	echo $PATH | grep -q Contents/Resources/bin || export PATH="$HOMEBREW/bin:$HOMEBREW/sbin:$PATH"

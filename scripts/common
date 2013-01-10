@@ -22,6 +22,13 @@ APP_ROOT="${ROOT}/VisualSFM.app"
 APP_RES="${APP_ROOT}/Contents/Resources"
 ATTIC="/Users/Shared/src/vsfm${ROOT}/"
 
+X11_LOC="opt"
+if [ ! -e "/opt/X11" ] && [ -e "/usr/X11" ]; then
+  X11_LOC="usr"
+else
+  echo "No X11 location found"
+fi
+
 function macports_deactivate() {
 	if [ -e /opt/local ]; then
 		echo "Macports omitted"
