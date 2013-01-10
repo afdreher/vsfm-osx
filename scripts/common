@@ -18,7 +18,8 @@
 set -e
 
 ROOT="/private/tmp/iromu"
-APP_ROOT="${ROOT}/VisualSFM.app"
+FINAL_APP=VisualSFM.app
+APP_ROOT="${ROOT}/${FINAL_APP}"
 APP_RES="${APP_ROOT}/Contents/Resources"
 ATTIC="/Users/Shared/src/vsfm${ROOT}/"
 

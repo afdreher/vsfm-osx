@@ -22,7 +22,6 @@ scriptPath=${0%/*}
 source "$scriptPath/common"
 
 BUILD_RES=$APP_RES
-FINAL_APP=VisualSFM.app
 FINAL_APP_RES="$FINAL_APP/Contents/Resources"
 
 
